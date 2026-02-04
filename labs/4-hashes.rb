@@ -24,12 +24,17 @@ puts "How much bitcoin do you have? (enter any numerical value)"
 bitcoin = gets.chomp
 
 # 2. The value will be a string, so you'll want to convert it to a Float
-bitcoin = bitcoin.to_f
+user_bitcoin = bitcoin.to_f
 
 # 3. Inspect the bitcoin_data hash
-# puts bitcoin_data
+#puts bitcoin_data
 
 # 4. Display the value of the user's bitcoin
 # Sample output:
 # puts "1 Bitcoin is valued at $41405.1046 USD."
 # puts "Your Bitcoin is worth $62107.6569."
+
+bitcoin_usd = bitcoin_data["USD"]["15m"]
+user_bitcoin_value = user_bitcoin * bitcoin_usd
+puts "1 bitcoin is valued at $#{bitcoin_usd} USD"
+puts "Your Bitcoin is worth $#{user_bitcoin_value} USD"

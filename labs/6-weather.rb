@@ -6,7 +6,7 @@
 # write a weather summary out to the screen. Something like this:
 # Currently it is 67 degrees and Sunny.
 # Forecast for the next 7 days:
-# - 65 degres and Mostly Cloudy
+# - 65 degrees and Mostly Cloudy
 # - 70 degrees and Partly Cloudy
 # - 62 degrees and Sunny
 # - 68 degrees and Sunny
@@ -30,3 +30,17 @@ weather_data = {
     { temperature: 60, conditions: "Rainy", precipitation: 0.9 }
   ]
 }
+
+puts "Currently it is #{weather_data[:current][:temperature]} degrees and #{weather_data[:current][:conditions]}"
+
+puts "Forecast for the next 7 days:"
+for day in weather_data[:forecast]
+  temp = day[:temperature]
+  condition = day[:conditions]
+  precip = day[:precipitation]*100
+  if precip > 50 && condition != "Rainy"
+    puts "- #{temp} degrees and #{condition} with a #{precip}% chance of rain"
+  else
+    puts "- #{temp} degrees and #{condition}"
+  end
+end

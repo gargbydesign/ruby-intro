@@ -15,3 +15,15 @@
 # HINTS
 # Learn to read the documentation!
 # https://ruby-doc.org/core-2.7.0/Array.html
+# 
+my_list = ["milk", "eggs", "bacon"]
+friend_list = ["beer", "cookies", "apples", "milk"]
+
+final_list = (my_list + friend_list).sort.uniq
+
+puts "buy #{final_list[0]}"
+puts "buy #{final_list[1]}"
+puts "buy #{final_list[2]}"
+puts "buy #{final_list[3]}"
+puts "buy #{final_list[4]}"
+puts "buy #{final_list[5]}"
